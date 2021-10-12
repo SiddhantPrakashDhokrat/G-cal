@@ -1,0 +1,110 @@
+
+
+<% if user_signed_in? %>
+
+<h1>Hello!! Welcome to Dashboard</h1>
+
+
+<head>
+  <style>
+  .bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 {
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  </style>
+</head>
+
+<body>
+<br>
+<div class="container-fluid bg-1 text-center"><br>
+  <h3>Google Calendar integration with Ruby on Rails</h3>
+  <img src="pic.jpeg" class="img-circle" height="150pt"><br><Br>
+<h4>Demo app to sync data with user Google calendar.</h4>
+<br><br>
+</div>
+
+
+</body>
+<br><br>
+<center>
+<h3>Candidate data</h3>
+</center>
+<br><br>
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+        <tr>
+          <td>
+<%= link_to friend.first_name + ' ' + friend.last_name, friend %>
+
+
+          </td>
+          
+          <td><%= friend.email %></td>
+          <td><%= friend.phone %></td>       
+             
+          <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+          
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Candidate', new_friend_path, class:"btn btn-secondary" %>
+<% else %>
+
+<h1>Hello!! Welcome to Dashboard</h1>
+
+
+<head>
+  <style>
+  .bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 {
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  </style>
+</head>
+
+<body>
+<br>
+<div class="container-fluid bg-1 text-center"><br>
+  <h3>Google Calendar integration with Ruby on Rails</h3>
+  <img src="pic.jpeg" class="img-circle" height="150pt"><br><Br>
+<h4>Demo app to sync data with user Google calendar.</h4>
+<br><br>
+</div>
+
+
+</body>
+
+
+<% end %>
