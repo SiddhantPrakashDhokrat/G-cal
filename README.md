@@ -1,8 +1,7 @@
 # Friends List App
 
-Hello my name is John Elder and I work at Codemy.com
+Hello my name is Siddhant
 
-This is my Ruby on Rails Friends List App!
+This is my Ruby on Rails Demo App!
 
-Follow me at Codemy.com
 
